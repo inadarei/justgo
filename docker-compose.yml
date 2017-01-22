@@ -1,0 +1,18 @@
+version: '2'
+
+services: 
+  app:
+    container_name: ms-helloworld
+    build: .
+    volumes:
+      - .:/opt/application
+      - /opt/application/bin
+      - /opt/application/pkg
+      - /opt/application/src
+      - /opt/application/gin-bin
+    ports:
+      - 3000
+    environment:
+      - APP_ENV=development
+    command: ["gin", "run"]
+
