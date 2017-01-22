@@ -15,3 +15,5 @@ services:
       - APP_ENV=development
     command: ["gin", "run"]
 
+    # see: https://github.com/codegangsta/gin
+
