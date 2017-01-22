@@ -9,7 +9,6 @@ services:
       - /opt/application/bin
       - /opt/application/pkg
       - /opt/application/src
-      - /opt/application/gin-bin
     ports:
       - 3000
     environment:

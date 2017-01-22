@@ -25,5 +25,5 @@ func main() {
 func viewHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-type", "text/plain")
 
-	fmt.Fprintf(w, "Hello world! This is great.")
+	fmt.Fprintf(w, "Hello world! This was easy!")
 }
