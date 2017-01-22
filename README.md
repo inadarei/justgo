@@ -7,7 +7,9 @@ To learn more: [https://justgo.rocks](https://justgo.rocks)
 ## How to run:
 
 1. Install a working Docker environment
-2. `> docker-compose up -d`
+2. Run: `docker-compose up -d`
+
+
 ## License
 
 [MIT](LICENSE)
