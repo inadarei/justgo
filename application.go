@@ -1,29 +1,20 @@
 package main
 
 import (
-	"fmt"
+	"app/server"
 	"log"
-	"net/http"
 	"os"
 )
 
 func main() {
 
+	// isDevelopment := os.Getenv("APP_ENV") == "development"
+
 	serverPort := os.Getenv("PORT")
 	if serverPort == "" {
 		serverPort = "3737"
-		log.Print("WARNING: no server port supplied. Defaulting to " + serverPort)
+		log.Print("WARNING: no server port supplied in the environment. Defaulting to " + serverPort)
 	}
 
-	http.HandleFunc("/", viewHandler)
-	err := http.ListenAndServe(":"+serverPort, nil)
-	if err != nil {
-		log.Fatal("ERROR: couldn't start server: ", err)
-	}
-}
-
-func viewHandler(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-type", "text/plain")
-
-	fmt.Fprintf(w, "Hello world! This was easy!")
+	server.StartServer(serverPort)
 }

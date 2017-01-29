@@ -3,7 +3,6 @@ Dockerfile
 docker-compose.yml
 LICENSE
 README.md
-pkg
-src
-bin
 gin-bin
+pkg
+bin

@@ -2,18 +2,17 @@ version: '2'
 
 services: 
   app:
-    container_name: ms-helloworld
+    container_name: ${CONTAINER_NAME}
     build: .
+    env_file: .env
     volumes:
-      - .:/opt/application
-      - /opt/application/bin
-      - /opt/application/pkg
-      - /opt/application/src
+      - .:${GOROOT}/src/${APP_NAME}
     ports:
       - 3000
     environment:
       - APP_ENV=development
     command: ["gin", "run"]
 
-    # see: https://github.com/codegangsta/gin
+    # @see: https://github.com/codegangsta/gin
+    # @see: https://larry-price.com/blog/2015/06/25/architecture-for-a-golang-web-app
 

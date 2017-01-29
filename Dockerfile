@@ -1,31 +1,34 @@
 FROM golang:1.7-alpine
 MAINTAINER Irakli Nadareishvili
 
-ENV REFRESHED_AT 2017-01-21_0600_EST
+ENV REFRESHED_AT 2017-01-25_0600_EST
 
-# Note: if you change APP_PATH and GOPATH here, you need to change docker-compose.yml, too
-ENV APP_PATH=/opt/application \
-    PATH=/opt/application/bin:${PATH} \
-    PORT=3737 \
-    GOPATH=/opt/application \
-    APP_USER=appuser \
-    APP_ENV=production
+# Note: if you change GOPATH here, you need to change in .env for docker-compose.yml, too
+ENV PORT=3737
+ENV APP_NAME=app
+ENV GOPATH=/go
+ENV PATH=${GOPATH}/bin:${PATH}
+ENV APP_USER=appuser
+ENV APP_ENV=production
 
-ADD ./ ${APP_PATH}
-WORKDIR ${APP_PATH}
-EXPOSE 3000
+ADD . ${GOPATH}/src/${APP_NAME}
+WORKDIR ${GOPATH}/src/${APP_NAME}
 
 USER root
 
 RUN adduser -s /bin/false -u 7007 -D ${APP_USER} \
- && mkdir -p ${APP_PATH}/bin \ 
- && chown -R ${APP_USER} ${APP_PATH} \
  && echo "Installing git and ssh support" \ 
  && apk update && apk upgrade \
  && apk add --no-cache bash git openssh \
- && echo "Installing go packages..." \
+ && echo "Installing infrastructural go packages..." \
  && go get github.com/codegangsta/gin \
- && echo "Cleaning up caches to reduce image size" \
+ && go get github.com/tools/godep \
+ # && go get \
+ && echo "Fixing permissions..." \
+ && chown -R ${APP_USER} ${GOPATH} \
+ && echo "Cleaning up installation caches to reduce image size" \
  && rm -rf /root/src /tmp/* /usr/share/man /var/cache/apk/* 
 
 USER ${APP_USER}
+
+EXPOSE 3000
