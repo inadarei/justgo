@@ -6,7 +6,7 @@ services:
     build: .
     env_file: .env
     volumes:
-      - .:${GOROOT}/src/${APP_NAME}
+      - .:${GOPATH}/src/${APP_NAME}
     ports:
       - 3000
     environment:
