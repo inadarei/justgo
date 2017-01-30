@@ -18,3 +18,5 @@ func main() {
 
 	server.StartServer(serverPort)
 }
+
+// @see: https://golang.org/doc/code.html

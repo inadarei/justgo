@@ -13,6 +13,5 @@ services:
       - APP_ENV=development
     command: ["gin", "run"]
 
-    # @see: https://github.com/codegangsta/gin
-    # @see: https://larry-price.com/blog/2015/06/25/architecture-for-a-golang-web-app
+# @see: https://github.com/codegangsta/gin
 
