@@ -19,6 +19,14 @@ To learn more: [https://justgo.rocks](https://justgo.rocks)
 5. You can edit source files of the application without restarting anything
    since JustGo supports hot reloading, using [Gin](https://github.com/codegangsta/gin)
 
+## Stopping and removing
+
+While in the project folder:
+
+```
+> docker-compose stop 
+> docker-compose rm -f 
+```
 
 ## License
 

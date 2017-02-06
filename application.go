@@ -1,9 +1,10 @@
 package main
 
 import (
-	"app/server"
 	"log"
 	"os"
+
+	"github.com/inadarei/justgo/server"
 )
 
 func main() {

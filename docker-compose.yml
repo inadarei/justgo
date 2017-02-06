@@ -2,11 +2,11 @@ version: '2'
 
 services: 
   app:
-    container_name: ${CONTAINER_NAME}
+    container_name: ms-helloworld
     build: .
-    env_file: .env
     volumes:
-      - .:${GOPATH}/src/${APP_NAME}
+      - .:/go/src/github.com/inadarei/justgo
+      - /go/src/github.com/inadarei/justgo/vendor
     ports:
       - 3000
     environment:

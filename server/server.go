@@ -2,8 +2,9 @@ package server
 
 import (
 	"fmt"
-	"log"
 	"net/http"
+
+	log "github.com/Sirupsen/logrus"
 )
 
 /**
@@ -14,11 +15,13 @@ func StartServer(serverPort string) {
 	err := http.ListenAndServe(":"+serverPort, nil)
 	if err != nil {
 		log.Fatal("ERROR: couldn't start server: ", err)
+	} else {
+		log.Info("Server started successfully")
 	}
 }
 
 func viewHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-type", "text/plain")
 
-	fmt.Fprintf(w, "Hello world! This was pretty awesome! Hot-reloading is the thing!")
+	fmt.Fprintf(w, "Hello world! This was pretty awesome! Hot-reloading rocks!")
 }

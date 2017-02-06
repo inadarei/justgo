@@ -27,3 +27,7 @@ pkg
 src
 gin-bin
 .godeps
+
+# You can/should uncomment these if you like checking-in dependencies
+glide.lock
+vendor
