@@ -1,4 +1,4 @@
-package main
+package main // import "github.com/inadarei/justgo"
 
 import (
 	"log"
@@ -8,6 +8,8 @@ import (
 )
 
 func main() {
+
+	log.Print("Application starting up...")
 
 	// isDevelopment := os.Getenv("APP_ENV") == "development"
 

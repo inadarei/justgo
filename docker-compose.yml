@@ -5,13 +5,15 @@ services:
     container_name: ms-helloworld
     build: .
     volumes:
-      - .:/go/src/github.com/inadarei/justgo
-      - /go/src/github.com/inadarei/justgo/vendor
+      - .:/go/src/app
+     ## Remove the following line if you are checking-in your dependencies 
+      - /go/src/app/vendor
     ports:
-      - 3000
+      - 3737
     environment:
       - APP_ENV=development
-    command: ["gin", "run"]
+    # command: "fresh"
+    command: CompileDaemon -build="go-wrapper install" -command="go-wrapper run" -exclude-dir=.git
 
 # @see: https://github.com/codegangsta/gin
 

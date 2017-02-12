@@ -23,5 +23,5 @@ func StartServer(serverPort string) {
 func viewHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-type", "text/plain")
 
-	fmt.Fprintf(w, "Hello world! This was pretty awesome! Hot-reloading rocks!")
+	fmt.Fprintf(w, "Hello world! This was pretty awesome! Hot-reloading rocks!\n")
 }
