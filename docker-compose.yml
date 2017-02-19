@@ -12,7 +12,6 @@ services:
       - 3737
     environment:
       - APP_ENV=development
-    # command: "fresh"
     command: CompileDaemon -build="go-wrapper install" -command="go-wrapper run" -exclude-dir=.git
 
 # @see: https://github.com/codegangsta/gin
