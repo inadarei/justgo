@@ -1,4 +1,4 @@
-package main // import "github.com/inadarei/justgo/cmd"
+package main // import "github.com/inadarei/justgo/cmd/justgo"
 
 import (
 	"archive/zip"
