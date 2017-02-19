@@ -1,0 +1,4 @@
+package: github.com/inadarei/justgo/cmd
+import:
+- package: github.com/urfave/cli
+  version: ^1.19.1
