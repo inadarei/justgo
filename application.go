@@ -1,3 +1,5 @@
+// Note: the comment below after 'main' is a hint to go-wrapper and is meaningful
+// Replace with the package path for your project
 package main // import "github.com/inadarei/justgo"
 
 import (
