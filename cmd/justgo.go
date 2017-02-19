@@ -34,14 +34,15 @@ func main() {
 }
 
 func buildProject(path string) {
-	fmt.Println("Building a skeleton microservice at:", path)
+	fmt.Printf("Building a skeleton microservice at destination path: `%v` \n", path)
 	exists, err := pathExists(path)
 	abortIfErr(err)
 
 	if exists == true { // need to make sure it's empty!
 		isPathEmpty := folderIsEmpty(path)
 		if !isPathEmpty {
-			fmt.Printf("There are files in `%v`. Destination path must be empty. Aborting.\n", path)
+			err := errors.New("There are files in `" + path + "`. Destination path must be empty. Aborting.")
+			abortIfErr(err)
 		}
 	} else {
 		err := os.MkdirAll(path, os.ModePerm)
@@ -59,6 +60,7 @@ func buildProject(path string) {
 	abortIfErr(err)
 
 	cleanup(path)
+	fmt.Println("Success. Happy coding!")
 }
 
 // Not everything in the download is useful. Remove garbage
