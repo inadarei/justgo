@@ -13,13 +13,11 @@ WORKDIR ${GOPATH}/src/app
 
 USER root
 
-RUN adduser -s /bin/false -u 7007 -D ${APP_USER} \
+RUN adduser -s /bin/false -D ${APP_USER} \
  && echo "Installing git and ssh support" \ 
  && apk update && apk upgrade \
  && apk add --no-cache bash git openssh \
  && echo "Installing infrastructural go packages…" \
- ## && go get github.com/pilu/fresh \
- ## && go get github.com/codegangsta/gin \
  && go get github.com/githubnemo/CompileDaemon \
  && go get github.com/Masterminds/glide \
  ## If you are checking-in your deps, you can remove following line
