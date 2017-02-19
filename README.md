@@ -4,7 +4,29 @@ Skeleton project for jump-starting a Go-powered microservice development with Do
 
 To learn more: [https://justgo.rocks](https://justgo.rocks)
 
-## How to run:
+## INSTALLATION 
+
+Easiest way to create new project skeletons is to install a CLI tool.
+
+If you already have Go:
+
+```
+> go get github.com/inadarei/justgo/cmd/justgo
+```
+
+Brew-based installer is coming soon.
+
+## USAGE
+
+After you have installed the CLI tool, to create a skeleton of a new project, just run:
+
+```
+> justgo
+```
+
+You can see various options by running `justgo -h`
+
+## How to run a projet:
 
 1. Install a working Docker environment
     1. Mac: https://docs.docker.com/docker-for-mac/
