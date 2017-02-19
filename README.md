@@ -6,9 +6,9 @@ To learn more: [https://justgo.rocks](https://justgo.rocks)
 
 ## INSTALLATION 
 
-Easiest way to create new project skeletons is to install a CLI tool.
+Easiest way to create a new project skeleton is to install JustGo CLI tool.
 
-If you already have Go:
+If you already have Go on your machine:
 
 ```
 > go get github.com/inadarei/justgo/cmd/justgo
