@@ -27,6 +27,8 @@ pkg
 src
 gin-bin
 .godeps
+.DS_Store
+
 
 # You can/should uncomment these if you like checking-in dependencies
 glide.lock
