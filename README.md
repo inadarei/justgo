@@ -26,7 +26,7 @@ After you have installed the CLI tool, to create a skeleton of a new project, ju
 
 You can see various options by running `justgo -h`
 
-## How to run a projet:
+## How to run a project, once created:
 
 1. Install a working Docker environment
     1. Mac: https://docs.docker.com/docker-for-mac/
