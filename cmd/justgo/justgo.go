@@ -15,7 +15,7 @@ import (
 func main() {
 	app := cli.NewApp()
 	app.Name = "justgo"
-	app.Version = "1.0.0"
+	app.Version = "1.0.1"
 	app.Usage = "create a new skeleton project for a Go-based API [micro]service"
 	app.UsageText = app.Name + " <path>"
 	app.ArgsUsage = "path"
@@ -165,7 +165,7 @@ func unzip(archive, target string, skipTop bool) error {
 		if skipTop {
 			if firstItem == "" {
 				firstItem = file.Name
-				//continue
+				continue
 			} else {
 				modPath, err = filepath.Rel(firstItem, file.Name)
 				abortIfErr(err)
