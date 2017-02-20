@@ -28,6 +28,14 @@ You can see various options by running `justgo -h`
 
 ## How to run a project, once created:
 
+### Short version:
+
+```
+`docker-compose up -d`
+```
+
+### Longer explanation:
+
 1. Install a working Docker environment
     1. Mac: https://docs.docker.com/docker-for-mac/
     2. Windows: https://docs.docker.com/docker-for-windows/
@@ -41,7 +49,7 @@ You can see various options by running `justgo -h`
 5. You can edit source files of the application without restarting anything
    since JustGo supports hot reloading, using [Gin](https://github.com/codegangsta/gin)
 
-## Stopping and removing
+## Stopping and removing a container
 
 While in the project folder:
 
