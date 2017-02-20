@@ -31,6 +31,6 @@ RUN adduser -s /bin/false -D ${APP_USER} \
 
 USER ${APP_USER}
 
-EXPOSE 3000
+EXPOSE 3737
 
 CMD ["go-wrapper", "run"]
