@@ -52,7 +52,7 @@ You can see various options by running `justgo -h`
 4. For instance, if the output was: `0.0.0.0:32791` under `ports` section then you
    can access your new service at `http://0.0.0.0:32791/`
 5. You can edit source files of the application without restarting anything
-   since JustGo supports hot reloading, using [Gin](https://github.com/codegangsta/gin)
+   since JustGo supports hot code reloading.
 
 ## Stopping and removing a container
 
