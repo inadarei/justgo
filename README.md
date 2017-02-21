@@ -14,7 +14,12 @@ If you already have Go on your machine:
 > go get github.com/inadarei/justgo/cmd/justgo
 ```
 
-Brew-based installer is coming soon.
+or using Homebrew:
+
+```
+> brew tap inadarei/casks
+> brew install justgo
+```
 
 ## USAGE
 
