@@ -6,15 +6,15 @@ To learn more: [https://justgo.rocks](https://justgo.rocks)
 
 ## INSTALLATION 
 
-Easiest way to create a new project skeleton is to install JustGo CLI tool.
+Easiest way to create a new project skeleton is to install JustGo CLI tool. There's no necessity to install Go on your machine, since the setup provides fully functioning Go environment in a Docker container. 
 
-If you already have Go on your machine:
+If you already have Go on your machine, you can install the CLI tool with:
 
 ```
 > go get github.com/inadarei/justgo/cmd/justgo
 ```
 
-or using Homebrew:
+or you can install it using Homebrew, even if you don't have Go:
 
 ```
 > brew tap inadarei/casks
