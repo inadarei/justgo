@@ -12,6 +12,18 @@ import (
 	"github.com/urfave/cli"
 )
 
+var nonProblematicFiles = map[string]bool{}
+
+func init() {
+	// Initialize map of the non-problematic files to ignore.
+	// Also, specify whether they will conflict with any files in the zip.
+	nonProblematicFiles = map[string]bool{
+		".git":       false,
+		".gitignore": false,
+		"README.md":  true,
+	}
+}
+
 func main() {
 	app := cli.NewApp()
 	app.Name = "justgo"
@@ -51,7 +63,20 @@ func buildProject(path string) {
 
 	fileUrl := "https://github.com/inadarei/justgo/archive/master.zip"
 	tmpFilePath := os.TempDir() + "justgo.zip"
-	//fmt.Println("Downloading to ", tmpFilePath)
+
+	// Move all conflicting files to tmp dir and move them back post-build
+	filesToMove := getConflictingFiles(path)
+	if filesToMove != nil {
+		for _, file := range filesToMove {
+			srcPath := filepath.Join(path, file)
+			tmpFilePath := filepath.Join(os.TempDir(), file)
+			err := os.Rename(srcPath, tmpFilePath)
+			abortIfErr(err)
+			defer os.Remove(tmpFilePath)
+			defer os.Rename(tmpFilePath, srcPath)
+		}
+	}
+
 	err = downloadFile(tmpFilePath, fileUrl)
 	abortIfErr(err)
 	defer os.Remove(tmpFilePath)
@@ -112,10 +137,13 @@ func folderIsEmpty(path string) bool {
 	}
 	defer f.Close()
 
-	_, err = f.Readdirnames(1)
-	if err == io.EOF {
+	filenames, err := f.Readdirnames(0)
+	abortIfErr(err)
+
+	if !containsProblematicFiles(filenames) {
 		return true
 	}
+
 	// If not already exited, scanning children must have errored-out
 	abortIfErr(err)
 	return false
@@ -199,4 +227,42 @@ func unzip(archive, target string, skipTop bool) error {
 	}
 
 	return nil
+}
+
+// Check whether folder contains any files other than those specified as non-problematic.
+func containsProblematicFiles(filesInDir []string) bool {
+
+	if len(filesInDir) > len(nonProblematicFiles) {
+		return true
+	}
+
+	// check if any files in the folder are considered to be problematic
+	for _, filename := range filesInDir {
+
+		// Is the file non-problematic?
+		_, exists := nonProblematicFiles[filename]
+
+		if !exists {
+			return true
+		}
+	}
+	return false
+}
+
+// Get Non-Problematic files in the 'target' folder that conflict with others in the zip.
+func getConflictingFiles(path string) []string {
+
+	var filesWithConflicts []string
+
+	for filename, hasConflict := range nonProblematicFiles {
+
+		exists, err := pathExists(filepath.Join(path, filename))
+		abortIfErr(err)
+
+		if exists && hasConflict == true {
+			filesWithConflicts = append(filesWithConflicts, filename)
+		}
+	}
+
+	return filesWithConflicts
 }
