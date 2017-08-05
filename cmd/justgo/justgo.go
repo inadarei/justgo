@@ -9,6 +9,7 @@ import (
 	"os"
 	"path/filepath"
 
+	"github.com/satori/go.uuid"
 	"github.com/urfave/cli"
 )
 
@@ -62,23 +63,28 @@ func buildProject(path string) {
 
 	fileUrl := "https://github.com/inadarei/justgo/archive/master.zip"
 	tmpFilePath := os.TempDir() + "justgo.zip"
+	defer os.Remove(tmpFilePath)
 
 	// Move all conflicting files to tmp dir and move them back post-build
 	filesToMove := getConflictingFiles(path)
+	uniqueToken := uuid.NewV4()
+	uniqueTempFolder := filepath.Join(os.TempDir(), fmt.Sprintf("%s", uniqueToken))
+	os.MkdirAll(uniqueTempFolder, os.ModePerm)
+	defer os.Remove(uniqueTempFolder)
+
 	if filesToMove != nil {
 		for _, file := range filesToMove {
 			srcPath := filepath.Join(path, file)
-			tmpFilePath := filepath.Join(os.TempDir(), file)
-			err := os.Rename(srcPath, tmpFilePath)
+			tmpMovedFilePath := filepath.Join(uniqueTempFolder, file)
+			err := os.Rename(srcPath, tmpMovedFilePath)
 			abortIfErr(err)
-			defer os.Remove(tmpFilePath)
-			defer os.Rename(tmpFilePath, srcPath)
+			defer os.Remove(tmpMovedFilePath)
+			defer os.Rename(tmpMovedFilePath, srcPath)
 		}
 	}
 
 	err = downloadFile(tmpFilePath, fileUrl)
 	abortIfErr(err)
-	defer os.Remove(tmpFilePath)
 
 	err = unzip(tmpFilePath, path, true)
 	abortIfErr(err)
