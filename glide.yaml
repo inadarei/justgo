@@ -1,9 +1,0 @@
-# @Tip: replace value of top package with your own namespace/code location
-package: github.com/inadarei/justgo
-import:
-  - package: github.com/Sirupsen/logrus
-  - package: github.com/tylerb/graceful
-  - package: github.com/spf13/viper
-  - package: github.com/spf13/cobra
-  - package: github.com/stretchr/testify
-  
