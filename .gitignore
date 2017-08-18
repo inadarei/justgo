@@ -29,8 +29,3 @@ gin-bin
 .godeps
 .DS_Store
 .idea/
-
-
-# You can/should uncomment these if you like checking-in dependencies
-glide.lock
-vendor

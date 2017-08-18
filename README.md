@@ -1,17 +1,20 @@
 # Jump-Start Go (JustGo)
 
-Skeleton project for jump-starting a Go-powered microservice development with Docker and Go best-practices.
+Skeleton project for jump-starting a Go-powered microservice development with
+Docker and Go best-practices.
 
 To learn more: [https://justgo.rocks](https://justgo.rocks)
 
 ## INSTALLATION 
 
-Easiest way to create a new project skeleton is to install JustGo CLI tool. There's no necessity to install Go on your machine, since the setup provides fully functioning Go environment in a Docker container. 
+Easiest way to create a new project skeleton is to install JustGo CLI tool.
+There's no necessity to install Go on your machine, since the setup provides
+fully functioning Go environment in a Docker container.
 
 If you already have Go on your machine, you can install the CLI tool with:
 
 ```
-> go get github.com/inadarei/justgo/cmd/justgo
+> go get github.com/inadarei/justgo
 ```
 
 or you can install it using Homebrew, even if you don't have Go:
@@ -23,45 +26,47 @@ or you can install it using Homebrew, even if you don't have Go:
 
 ## USAGE
 
-After you have installed the CLI tool, to create a skeleton of a new project, just run:
+After you have installed the CLI tool, to create a skeleton of a new project,
+just run:
 
 ```
 > justgo
 ```
 
-You can see various options by running `justgo -h`
+You can see various options by running `justgo -h`. To learn how to run a
+project, once it is created, see
+[here](https://github.com/inadarei/justgo-microservice#how-to-run-a-project-once-created)
 
-## How to run a project, once created:
+## Contributing to the CLI Interface
 
-### Short version:
+If you are interested in contributing to the development of this CLI tool,
+following are the instructions for setting up a dev environment:
 
+## Prerequisites
+
+ - Latest Go version (al teast 1.8+)
+ - Properly set up `$GOPATH` and `GOPATH/bin` added to `$PATH`
+ - Go's Dep tool installed:
+     - Install via: `go get -u github.com/golang/dep/cmd/dep`
+
+## Installation
+
+```BASH
+> cd $GOPATH/src
+> mkdir -p github.com/inadarei/
+> git clone https://github.com/inadarei/justgo.git
+> cd justgo/
+> dep ensure
+> go run justgo.go <someFolderToTestInstallTo>
 ```
-`docker-compose up -d`
-```
 
-### Longer explanation:
+## Warning for VS Code Users
 
-1. Install a working Docker environment
-    1. Mac: https://docs.docker.com/docker-for-mac/
-    2. Windows: https://docs.docker.com/docker-for-windows/
-    3. Linux: https://docs.docker.com/engine/installation/linux/
-2. cd to the project's root folder and run `docker-compose build --no-cache` (optional but good step)
-3. In the same folder, run: `docker-compose up -d`
-4. If you get a clean output, you can check which port the server
-   attached to by running: `docker-compose ps`
-4. For instance, if the output was: `0.0.0.0:32791` under `ports` section then you
-   can access your new service at `http://0.0.0.0:32791/`
-5. You can edit source files of the application without restarting anything
-   since JustGo supports hot code reloading.
-
-## Stopping and removing a container
-
-While in the project folder:
-
-```
-> docker-compose stop 
-> docker-compose rm -f 
-```
+If you are using VS Code with Go tooling, you will want to change the default
+`"go.formatTool": "goreturns",` formatter to `"go.formatTool": "gofmt",` instead
+since the former seems unable to properly detect the usage of uuid in the code
+and keeps removing the uuid package's import statement from code, making it
+error-out during a build. Gofmt has no such issues.
 
 ## License
 
