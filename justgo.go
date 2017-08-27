@@ -62,7 +62,7 @@ func buildProject(path string) {
 		abortIfErr(err)
 	}
 
-	fileUrl := "https://github.com/inadarei/justgo/archive/master.zip"
+	fileUrl := "https://github.com/inadarei/justgo-microservice/archive/master.zip"
 	tmpFilePath := os.TempDir() + "justgo.zip"
 	defer os.Remove(tmpFilePath)
 
