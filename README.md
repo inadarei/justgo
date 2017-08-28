@@ -56,7 +56,7 @@ following are the instructions for setting up a dev environment:
  - Go's Dep tool installed:
      - Install via: `go get -u github.com/golang/dep/cmd/dep`
 
-### Installation
+### Dev Workspace Setup
 
 ```BASH
 > cd $GOPATH/src
