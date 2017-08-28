@@ -37,19 +37,26 @@ You can see various options by running `justgo -h`. To learn how to run a
 project, once it is created, see
 [here](https://github.com/inadarei/justgo-microservice#how-to-run-a-project-once-created)
 
+## Upgrade with Brew
+
+```BASH
+> brew update
+> brew upgrade justgo
+```
+
 ## Contributing to the CLI Interface
 
 If you are interested in contributing to the development of this CLI tool,
 following are the instructions for setting up a dev environment:
 
-## Prerequisites
+### Prerequisites
 
  - Latest Go version (al teast 1.8+)
  - Properly set up `$GOPATH` and `GOPATH/bin` added to `$PATH`
  - Go's Dep tool installed:
      - Install via: `go get -u github.com/golang/dep/cmd/dep`
 
-## Installation
+### Installation
 
 ```BASH
 > cd $GOPATH/src
@@ -60,14 +67,7 @@ following are the instructions for setting up a dev environment:
 > go run justgo.go <someFolderToTestInstallTo>
 ```
 
-## Upgrade with Brew
-
-```BASH
-> brew update
-> brew upgrade justgo
-```
-
-## Warning for VS Code Users
+### Warning for VS Code Users
 
 If you are using VS Code with Go tooling, you will want to change the default
 `"go.formatTool": "goreturns",` formatter to `"go.formatTool": "gofmt",` instead
