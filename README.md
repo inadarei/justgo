@@ -60,6 +60,13 @@ following are the instructions for setting up a dev environment:
 > go run justgo.go <someFolderToTestInstallTo>
 ```
 
+## Upgrade with Brew
+
+```BASH
+> brew update
+> brew upgrade justgo
+```
+
 ## Warning for VS Code Users
 
 If you are using VS Code with Go tooling, you will want to change the default
