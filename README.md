@@ -4,9 +4,9 @@ A helpful builder for a light-weight Go [skeleton project](https://github.com/in
 
 To learn more: [https://justgo.rocks](https://justgo.rocks)
 
-Features:
+### Features:
 
-1. Project-specific Go environment in a container. No cross-project dependency issues.
+1. Isolated, project-specific Go environments in a container. No cross-project dependency issues.
 2. No mess with configuring GOPATH across projects!
 3. Code hot-reloading out of the box!
 4. Ready to ship as a container in production, when you are done working with it.
