@@ -4,6 +4,14 @@ A helpful builder for a light-weight Go [skeleton project](https://github.com/in
 
 To learn more: [https://justgo.rocks](https://justgo.rocks)
 
+Features:
+
+1. Project-specific Go environment in a container. No cross-project dependency issues.
+2. No mess with configuring GOPATH across projects!
+3. Code hot-reloading out of the box!
+4. Ready to ship as a container in production, when you are done working with it.
+5. Future-proof choice of [dep](https://github.com/golang/dep) for dependency-management
+
 ## INSTALLATION 
 
 Easiest way to create a new project skeleton is to install JustGo CLI tool.
