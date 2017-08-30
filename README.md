@@ -1,6 +1,6 @@
 # Jump-Start Go (JustGo)
 
-Builder for a light-weight Go [skeleton project](https://github.com/inadarei/justgo-microservice) takes care of a lot of boilerplate in jump-starting a Go-powered microservice development with Docker and Go best-practices.
+A helpful builder for a light-weight Go [skeleton project](https://github.com/inadarei/justgo-microservice) takes care of a lot of boilerplate in jump-starting a Go-powered microservice development with Docker and Go best-practices.
 
 To learn more: [https://justgo.rocks](https://justgo.rocks)
 
