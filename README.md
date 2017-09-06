@@ -1,4 +1,7 @@
 # Jump-Start Go (JustGo)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/inadarei/justgo/issues)
+[![Go project version](https://badge.fury.io/go/github.com%2Finadarei%2Fjustgo.svg)](https://badge.fury.io/go/github.com%2Finadarei%2Fjustgo)
+[![Go Report Card](https://goreportcard.com/badge/github.com/inadarei/justgo)](https://goreportcard.com/report/github.com/inadarei/justgo-microservice)
 
 A helpful builder for a light-weight Go [skeleton project](https://github.com/inadarei/justgo-microservice) takes care of a lot of boilerplate in jump-starting a Go-powered microservice development with Docker and Go best-practices.
 
