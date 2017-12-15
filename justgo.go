@@ -21,7 +21,8 @@ func init() {
 	nonProblematicFiles = map[string]bool{
 		".git":       false,
 		".gitignore": false,
-		"justgo": false,
+		"justgo":     false,
+		"LICENSE":    false,
 		"README.md":  true,
 	}
 }
@@ -29,7 +30,7 @@ func init() {
 func main() {
 	app := cli.NewApp()
 	app.Name = "justgo"
-	app.Version = "1.1.0"
+	app.Version = "1.1.2"
 	app.Usage = "create a new skeleton project for a Go-based API [micro]service"
 	app.UsageText = app.Name + " <path>"
 	app.ArgsUsage = "path"
