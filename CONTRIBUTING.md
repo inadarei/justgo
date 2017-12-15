@@ -17,6 +17,7 @@ Contributions are always welcome, no matter how large or small. Substantial feat
 > mkdir -p github.com/inadarei/
 > git clone https://github.com/inadarei/justgo.git
 > cd justgo/
+> .githooks/install.sh
 > dep ensure
 > go run justgo.go <someFolderToTestInstallTo>
 ```
@@ -33,7 +34,7 @@ error-out during a build. Gofmt has no such issues.
 
 We actively welcome your pull requests.
 
-1. Create an Issue or RFC for your contribution. 
+1. Create an Issue or RFC for your contribution.
 1. Fork the repo and create your branch from `master`.
 1. If you've added code that should be tested, add tests.
 1. Update the documentation.
