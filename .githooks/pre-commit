@@ -2,4 +2,4 @@
 
 buildpath=./build/justgo
 go build -o "$buildpath"
-echo "Successfully built to $buildpath"
+echo "Successfully built new binary at: $buildpath"
