@@ -4,6 +4,6 @@
 gitpath=`git rev-parse --git-dir`
 projectpath="$(dirname $gitpath)/"
 if test "$projectpath" = './'; then
-  projectpath=$(pwd)
+  projectpath="$(pwd)/"
 fi
 ln -s -f "$projectpath.githooks/pre-commit" "$gitpath/hooks/pre-commit"
