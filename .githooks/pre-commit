@@ -1,3 +1,5 @@
- #!/bin/sh
-go build -o ./build/justgo
-echo "Built successfully"
+#!/bin/sh
+
+buildpath=./build/justgo
+go build -o "$buildpath"
+echo "Successfully built to $buildpath"
