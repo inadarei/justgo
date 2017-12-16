@@ -17,12 +17,13 @@ var nonProblematicFiles = map[string]bool{}
 
 func init() {
 	// Initialize map of the non-problematic files to ignore.
-	// Also, specify whether they will conflict with any files in the zip.
+	// Also, specify whether they could conflict with any files in the zip.
+	// and therefore may need to be actively preserved (value == "true")
 	nonProblematicFiles = map[string]bool{
 		".git":       false,
 		".gitignore": false,
 		"justgo":     false,
-		"LICENSE":    false,
+		"LICENSE":    true,
 		"README.md":  true,
 	}
 }
@@ -30,7 +31,7 @@ func init() {
 func main() {
 	app := cli.NewApp()
 	app.Name = "justgo"
-	app.Version = "1.1.3"
+	app.Version = "1.1.4"
 	app.Usage = "create a new skeleton project for a Go-based API [micro]service"
 	app.UsageText = app.Name + " <path>"
 	app.ArgsUsage = "path"
@@ -99,10 +100,13 @@ func buildProject(path string) {
 func cleanup(path string) {
 	var err error
 
-	err = os.Remove(filepath.Join(path, "LICENSE"))
-	abortIfErr(err)
-	err = os.Remove(filepath.Join(path, "README.md"))
-	abortIfErr(err)
+	filesToRemove := []string{"CODE_OF_CONDUCT.md", "CONTRIBUTING.md", "README.md", "LICENSE"}
+
+	for _, file := range filesToRemove {
+		err = os.Remove(filepath.Join(path, file))
+		abortIfErr(err)
+	}
+
 	err = os.RemoveAll(filepath.Join(path, "cmd"))
 	abortIfErr(err)
 }
