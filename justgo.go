@@ -31,7 +31,7 @@ func init() {
 func main() {
 	app := cli.NewApp()
 	app.Name = "justgo"
-	app.Version = "1.1.4"
+	app.Version = "1.1.5"
 	app.Usage = "create a new skeleton project for a Go-based API [micro]service"
 	app.UsageText = app.Name + " <path>"
 	app.ArgsUsage = "path"
@@ -100,7 +100,7 @@ func buildProject(path string) {
 func cleanup(path string) {
 	var err error
 
-	filesToRemove := []string{"CODE_OF_CONDUCT.md", "CONTRIBUTING.md", "README.md", "LICENSE"}
+	filesToRemove := []string{"CODE_OF_CONDUCT.md", "CONTRIBUTING.md", "LICENSE"}
 
 	for _, file := range filesToRemove {
 		err = os.Remove(filepath.Join(path, file))
