@@ -31,7 +31,7 @@ func init() {
 func main() {
 	app := cli.NewApp()
 	app.Name = "justgo"
-	app.Version = "1.2.0"
+	app.Version = "1.2.1"
 	app.Usage = "create a new skeleton project for a Go-based API [micro]service"
 	app.UsageText = app.Name + " <path>"
 	app.ArgsUsage = "path"
