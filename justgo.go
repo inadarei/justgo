@@ -65,7 +65,7 @@ func buildProject(path string) {
 	}
 
 	fileUrl := "https://github.com/inadarei/justgo-microservice/archive/master.zip"
-	tmpFilePath := os.TempDir() + "justgo.zip"
+	tmpFilePath := os.TempDir() + string(os.PathSeparator) + "justgo.zip"
 	defer os.Remove(tmpFilePath)
 
 	// Move all conflicting files to tmp dir and move them back post-build
