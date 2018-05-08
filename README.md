@@ -2,6 +2,7 @@
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/inadarei/justgo/issues)
 [![Go project version](https://badge.fury.io/go/github.com%2Finadarei%2Fjustgo.svg)](https://badge.fury.io/go/github.com%2Finadarei%2Fjustgo)
 [![Go Report Card](https://goreportcard.com/badge/github.com/inadarei/justgo)](https://goreportcard.com/report/github.com/inadarei/justgo-microservice)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Finadarei%2Fjustgo.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Finadarei%2Fjustgo?ref=badge_shield)
 
 A helpful builder for a light-weight Go [skeleton project](https://github.com/inadarei/justgo-microservice) takes care of a lot of boilerplate in jump-starting a Go-powered microservice development with Docker and Go best-practices.
 
@@ -62,3 +63,6 @@ See [Contributing](CONTRIBUTING.md).
 ## License
 
 [MIT](LICENSE)
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Finadarei%2Fjustgo.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Finadarei%2Fjustgo?ref=badge_large)
