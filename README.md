@@ -46,7 +46,7 @@ just run:
 
 You can see various options by running `justgo -h`. To learn how to run a
 project, once it is created, see
-[here](https://github.com/inadarei/justgo-microservice#how-to-run-a-project-once-created)
+[here](https://github.com/inadarei/justgo-microservice#quickstart)
 
 ## Upgrade with Brew
 
