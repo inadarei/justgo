@@ -27,6 +27,7 @@ If you already have Go on your machine, you can install the CLI tool with:
 ```
 > go get github.com/inadarei/justgo
 ```
+Please make sure you have $GOPATH environment variable set and that $GOPATH/bin is in your $PATH.
 
 or you can install it using Homebrew, even if you don't have Go:
 
