@@ -19,7 +19,7 @@ conduct](https://github.com/inadarei/justgo/blob/master/CODE_OF_CONDUCT.md).
 
 ```BASH
 > cd $GOPATH/src
-> mkdir -p github.com/inadarei/
+> mkdir -p github.com/inadarei/ && cd github.com/inadarei/
 > git clone https://github.com/inadarei/justgo.git
 > cd justgo/
 > .githooks/install.sh
