@@ -3,6 +3,8 @@
 *.a
 *.so
 
+go.sum
+
 # Folders
 _obj
 _test
