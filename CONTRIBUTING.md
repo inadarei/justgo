@@ -13,7 +13,7 @@ conduct](https://github.com/inadarei/justgo/blob/master/CODE_OF_CONDUCT.md).
  - Latest Go version (al teast 1.8+)
  - Properly set up `$GOPATH` and `GOPATH/bin` added to `$PATH`
  - Go's Dep tool installed:
-     - Install via: `go get -u github.com/golang/dep/cmd/dep`
+     - Install via: `curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh`
 
 ### Dev Workspace Setup
 
